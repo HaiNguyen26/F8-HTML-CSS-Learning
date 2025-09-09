@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* Giúp việc xác định kích thước layout dễ hơn */
+}
+
+
+#main {}
+
+/* Phần đầu trang */
+#header {
+    height: 46px;
+    /* Chiều cao của header */
+    background-color: black;
+    /* Màu nền đen */
+}
+
+/* Các mục trong menu (Home, Band, Tour, ...) */
+#Menu li {
+    display: inline-block;
+    /* Hiển thị các mục trên cùng một hàng */
+    line-height: 46px;
+    /* Căn giữa chữ theo chiều dọc */
+    position: relative;
+    /* Tạo vị trí tương đối để làm gốc cho menu con */
+
+}
+
+/* Thêm khoảng đệm cho các thẻ link trong menu */
+#Menu li a {
+    padding: 10px;
+}
+
+/* Hiệu ứng khi di chuột vào mục menu */
+#Menu li:hover a {
+    color: black;
+    /* Đổi màu chữ thành đen */
+    background-color: white;
+    /* Đổi màu nền thành trắng */
+
+}
+
+/* Định dạng cho các thẻ link trong menu */
+#Menu li a {
+    text-decoration: none;
+    /* Bỏ gạch chân */
+    color: white;
+    /* Màu chữ trắng */
+    font-size: 18px;
+    /* Cỡ chữ */
+}
+
+/* Menu con (ẩn mặc định) */
+#Menu .sub-nav {
+    display: none;
+    /* Ẩn menu con đi */
+    position: absolute;
+    /* Đưa menu con ra khỏi luồng bình thường của trang */
+}
+
+/* Hiệu ứng khi di chuột vào mục cha, menu con sẽ hiện ra */
+#Menu li:hover .sub-nav {
+    display: block;
+    /* Hiện menu con dưới dạng khối */
+}
+
+/* Phần slider/banner */
+#slider {
+    background-color: gray;
+    /* Màu nền xám */
+    height: 300px;
+    /* Chiều cao 300px */
+}
+
+#contetnt {}
+
+#footer {}
