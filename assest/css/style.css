@@ -1,78 +1,188 @@
+/* Reset CSS, áp dụng cho tất cả các thẻ */
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
-    /* Giúp việc xác định kích thước layout dễ hơn */
+    margin: 0;
+    padding: 0;
 }
-
-
-#main {}
 
 /* Phần đầu trang */
 #header {
-    height: 46px;
-    /* Chiều cao của header */
     background-color: black;
-    /* Màu nền đen */
+    height: 46px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
 }
 
-/* Các mục trong menu (Home, Band, Tour, ...) */
+/* Các mục trong menu chính */
 #Menu li {
     display: inline-block;
-    /* Hiển thị các mục trên cùng một hàng */
+    /* Xếp các mục hàng ngang */
     line-height: 46px;
     /* Căn giữa chữ theo chiều dọc */
     position: relative;
-    /* Tạo vị trí tương đối để làm gốc cho menu con */
-
+    /* Làm gốc cho menu con */
 }
 
-/* Thêm khoảng đệm cho các thẻ link trong menu */
+/* Các liên kết trong menu chính */
 #Menu li a {
-    padding: 10px;
-}
-
-/* Hiệu ứng khi di chuột vào mục menu */
-#Menu li:hover a {
-    color: black;
-    /* Đổi màu chữ thành đen */
-    background-color: white;
-    /* Đổi màu nền thành trắng */
-
-}
-
-/* Định dạng cho các thẻ link trong menu */
-#Menu li a {
+    color: white;
+    font-size: 18px;
+    padding: 13px;
     text-decoration: none;
     /* Bỏ gạch chân */
-    color: white;
-    /* Màu chữ trắng */
-    font-size: 18px;
-    /* Cỡ chữ */
 }
 
-/* Menu con (ẩn mặc định) */
+/* Hiệu ứng khi di chuột vào mục menu chính */
+#Menu li:hover>a {
+    background-color: aliceblue;
+    color: black;
+}
+
+/* Khối menu con (ẩn mặc định) */
 #Menu .sub-nav {
     display: none;
-    /* Ẩn menu con đi */
+    /* Ẩn đi khi chưa hover */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Tạo bóng đổ */
     position: absolute;
-    /* Đưa menu con ra khỏi luồng bình thường của trang */
+    /* Nổi lên trên các nội dung khác */
+    top: 99%;
+    /* Đặt vị trí ngay dưới menu cha */
+    width: auto;
 }
 
-/* Hiệu ứng khi di chuột vào mục cha, menu con sẽ hiện ra */
+/* Hiện menu con khi di chuột vào mục cha */
 #Menu li:hover .sub-nav {
     display: block;
-    /* Hiện menu con dưới dạng khối */
 }
 
-/* Phần slider/banner */
+/* Các mục trong menu con */
+#Menu .sub-nav li {
+    line-height: normal;
+    /* Reset chiều cao dòng để các mục sát nhau */
+}
+
+/* Các liên kết trong menu con */
+#Menu .sub-nav li a {
+    color: black;
+    display: block;
+    /* Biến thành khối để chiếm hết chiều rộng */
+    width: 120px;
+    /* Đặt chiều rộng cố định */
+}
+
+/* Biểu tượng mũi tên */
+#Menu .more-arow-down {
+    margin-left: 5px;
+    font-size: 12px;
+    vertical-align: middle;
+    /* Căn giữa với chữ */
+}
+
+/* Hiệu ứng khi di chuột vào mục trong menu con */
+#Menu .sub-nav li:hover a {
+    background-color: bisque;
+    color: black;
+}
+
+/* Áp dụng cho toàn bộ khối menu */
+#Menu {
+    display: inline-block;
+}
+
+#header .search-icon {
+    float: right;
+    color: white;
+    cursor: pointer;
+    line-height: 46px;
+    padding: 0 23px;
+    cursor: pointer;
+
+}
+
+#header .search-icon:hover {
+    color: white;
+    background-color: red;
+}
+
+/* áp dụng trực tiếp CSS cho chính phần tử .search-icon */
+
+/* Phần slider */
 #slider {
-    background-color: gray;
-    /* Màu nền xám */
-    height: 300px;
-    /* Chiều cao 300px */
+    /* tạo ra một khoảng trống (padding) ở phía trên của phần tử, có chiều cao bằng một nửa chiều rộng của nó. */
+    padding-top: 50%;
+    background: url(/assest/img/img_la.jpg) top center / cover no-repeat;
+    /* background-size: cover; */
+    margin-top: 46px;
+    position: relative;
+
 }
 
-#contetnt {}
 
-#footer {}
+#slider .text-content {
+    position: absolute;
+    bottom: 48px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.text-heading {
+    font-size: 24px;
+    font-weight: 400;
+
+}
+
+.text-description {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 25px;
+}
+
+#content {}
+
+#content .content-section {
+    width: 800px;
+    padding: 46px 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#content .section-heading,
+#content .section-sub-heading {
+    text-align: center;
+}
+
+#content .section-heading {
+    font-weight: 500;
+    font-style: 30px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+#content .section-sub-heading {
+    margin-top: 25px;
+    font-style: 15px;
+    font-style: italic;
+}
+
+#content .about {
+    margin-top: 25px;
+    font-style: 15px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.member-item {
+    float: left;
+    width: calc(100% / 3);
+}
+
+.team-member {
+    margin-top: 45px;
+
+}
